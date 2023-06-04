@@ -1,0 +1,48 @@
+@import "../utils/css/setup.css";
+@import "../utils/css/colors.css";
+@import "../utils/css/timeline.css";
+
+body {
+  background-color: var(--primaryBackground-dark);
+  color: var(--primaryText-dark);
+  gap: 2rem;
+  padding-block: 1rem;
+}
+
+.favicon {
+  width: 10rem;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  /* width: 60%; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  min-width: 7rem;
+  cursor: pointer;
+  padding: 0.4rem 0.7rem;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}

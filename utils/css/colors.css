@@ -1,0 +1,44 @@
+:root {
+  /* Example from FlutterFlow's Theme Settings */
+  /* https://docs.flutterflow.io/widgets-and-components/theme-settings/colors */
+
+  /* LIGHT MODE  */
+  /* Brand Colors */
+  --primary-light: #fff;
+  --secondary-light: #fff;
+  --tertiary-light: #fff;
+  --alternate-light: #fff;
+
+  /* Utility Colors */
+  --primaryText-light: #111;
+  --secondaryText-light: #222;
+
+  --primaryBackground-light: #fff;
+  --secondaryBackground-light: #fff;
+
+  /* Accent Colors */
+  --accent1-light: #eee;
+  --accent2-light: #e0e0e0;
+  --accent3-light: #757575;
+  --accent4-light: #616161;
+
+  /* DARK MODE (Default) */
+  /* Brand Colors */
+  --primary-dark: #fff;
+  --secondary-dark: #fff;
+  --tertiary-dark: #fff;
+  --alternate-dark: #fff;
+
+  /* Utility Colors */
+  --primaryText-dark: #fff;
+  --secondaryText-dark: #222;
+
+  --primaryBackground-dark: rgb(17 24 39);
+  --secondaryBackground-dark: #fff;
+
+  /* Accent Colors */
+  --accent1-dark: #eee;
+  --accent2-dark: #e0e0e0;
+  --accent3-dark: #757575;
+  --accent4-dark: #616161;
+}
