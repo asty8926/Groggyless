@@ -3,7 +3,7 @@
 
 	let mode: 'sleep' | 'nap' = 'sleep';
 	$: minDuration = mode === 'sleep' ? config.sleepMinDuration : config.napMinDuration;
-	// $: maxDuration = mode === 'sleep' ? config.sleepMaxDuration : config.napMaxDuration;
+	$: maxDuration = mode === 'sleep' ? config.sleepMaxDuration : config.napMaxDuration;
 
 	$: cyclesAmount = config.sleepMaxDuration - config.sleepMinDuration;
 
@@ -28,15 +28,35 @@
 	}
 </script>
 
-<div>
-	<label>
-		<input type="radio" bind:group={mode} value="sleep" />
-		Sleep
+<!-- <div class="flex items-center">
+	<input
+		type="checkbox"
+		id="toggle-switch"
+		class="sr-only"
+		on:change={() => (mode = mode === 'sleep' ? 'nap' : 'sleep')}
+		checked={mode === 'nap'}
+	/>
+	<label
+		for="toggle-switch"
+		class="relative inline-block w-14 h-8 transition-all duration-300 bg-gray-200 rounded-full"
+		style="background-color: {mode === 'nap' ? '#6366F1' : 'white'}"
+	>
+		<span
+			class="absolute inline-block h-8 w-8 transition-all rounded-full bg-white shadow-md"
+			style="left: {mode === 'nap' ? '0' : 'calc(100% - 14px)'}; background-color: {mode === 'nap'
+				? 'white'
+				: '#6366F1'}"
+		></span>
 	</label>
-	<label>
-		<input type="radio" bind:group={mode} value="nap" />
-		Nap
-	</label>
+	<span class="ml-2">{mode === 'sleep' ? 'Sleep' : 'Nap'}</span>
+</div> -->
+
+<label for="mode-radio-group">Mode:</label>
+<div class="mt-2">
+	<input type="radio" id="sleep-radio" name="mode-radio-group" value="sleep" bind:group={mode} />
+	<label for="sleep-radio" class="ml-2">Sleep</label>
+	<input type="radio" id="nap-radio" name="mode-radio-group" value="nap" bind:group={mode} />
+	<label for="nap-radio" class="ml-2">Nap</label>
 </div>
 
 <span
@@ -47,7 +67,12 @@
 	}).format(new Date())}</span
 >
 
-<div>Suggested alarms:</div>
+<div>
+	To get between {minDuration} and {maxDuration} hour{maxDuration > 1 ? 's' : ''} of sleep, you need
+	to wake up at these suggested times:
+</div>
+
+<!-- <div>Suggested alarms:</div> -->
 {#key mode}
 	{#each formatDateArray(cyclesAmount) as suggestedTime}
 		<div>{suggestedTime}</div>
