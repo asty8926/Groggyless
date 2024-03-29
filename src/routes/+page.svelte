@@ -28,29 +28,6 @@
 	}
 </script>
 
-<!-- <div class="flex items-center">
-	<input
-		type="checkbox"
-		id="toggle-switch"
-		class="sr-only"
-		on:change={() => (mode = mode === 'sleep' ? 'nap' : 'sleep')}
-		checked={mode === 'nap'}
-	/>
-	<label
-		for="toggle-switch"
-		class="relative inline-block w-14 h-8 transition-all duration-300 bg-gray-200 rounded-full"
-		style="background-color: {mode === 'nap' ? '#6366F1' : 'white'}"
-	>
-		<span
-			class="absolute inline-block h-8 w-8 transition-all rounded-full bg-white shadow-md"
-			style="left: {mode === 'nap' ? '0' : 'calc(100% - 14px)'}; background-color: {mode === 'nap'
-				? 'white'
-				: '#6366F1'}"
-		></span>
-	</label>
-	<span class="ml-2">{mode === 'sleep' ? 'Sleep' : 'Nap'}</span>
-</div> -->
-
 <label for="mode-radio-group">Mode:</label>
 <div class="mt-2">
 	<input type="radio" id="sleep-radio" name="mode-radio-group" value="sleep" bind:group={mode} />
